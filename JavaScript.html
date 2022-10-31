@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* button = all */
+        /* #btn1 = id only */
+        /* .group1 = class only*/
+        .group1 {
+          background-color: #4CAF50;
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+        .group1:hover {
+            background-color: #2EE59D;
+            box-shadow: 0px 15px 20px rgba(40, 230, 160, 0.5);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        .group2 {
+          background-color: #af4c4c;
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+        .group2:hover {
+            background-color: #e52e2e;
+            box-shadow: 0px 15px 20px rgba(230, 40, 40, 0.5);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <h1>My first JavaScript Exercises</h1>
+    <!-- <button id="btn-3" class="group1" onclick="clickMeFunction()">Click me</button> -->
+    <button id="btn-3" class="group1">Click me</button>
+    <button id="btn-2" class="group1">Click me</button>
+    <button id="btn-1" class="group1">Click me</button>
+    <button id="btn-0" class="group1">Click me</button>
+
+    <script>
+        window.onload = function () { // don't execute anything until page fully loads
+            console.log("DOM Loaded");
+            const btn_3 = document.getElementById('btn-3');
+            btn_3.addEventListener('click', (event) => {
+                console.log(btn_3.className);
+                console.log('You click btn-3!');
+                if (btn_3.className == "group1") {
+                    btn_3.classList.remove("group1");
+                    btn_3.classList.add("group2");
+                    console.log("1>2");
+                } else if (btn_3.classList == "group2") {
+                    btn_3.classList.remove("group2");
+                    btn_3.classList.add("group1");
+                    console.log("2>1");
+                }
+            });
+            
+        }
+        // function clickMeFunction() {
+        //     // console.log("you clicked me");
+        //     // alert("you have clicked me")
+        // }
+    </script>
+
+</body>
+</html>
