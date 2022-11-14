@@ -46,13 +46,12 @@
             color: #fff;
             transform: translateY(-2px);
         }
-
-
+        
     </style>
 
 </head>
 <body>
-    <h1>My first JavaScript Exercises</h1>
+    <h1 id="title">My first JavaScript Exercises</h1>
     <!-- <button id="btn-3" class="group1" onclick="clickMeFunction()">Click me</button> -->
     <button id="btn-3" class="group1">Click me</button>
     <button id="btn-2" class="group1">Click me</button>
@@ -70,12 +69,26 @@
                     btn_3.classList.remove("group1");
                     btn_3.classList.add("group2");
                     console.log("1>2");
-                } else if (btn_3.classList == "group2") {
+                } else if (btn_3.className == "group2") {
                     btn_3.classList.remove("group2");
                     btn_3.classList.add("group1");
                     console.log("2>1");
                 }
             });
+
+            const btn_2 = document.getElementById('btn-2');
+            const title_h1 = document.getElementById('title');
+            btn_2.addEventListener('click', (event) => {
+                if (btn_2.textContent == "Click me") {
+                    btn_2.textContent = "Clicked";
+                    title_h1.textContent = "My first JavaScript Exercises V2"
+                } else if (btn_2.textContent == "Clicked") {
+                    btn_2.textContent = "Click me"
+                    title_h1.textContent = "My first JavaScript Exercises"
+
+                }
+            });
+
             
         }
         // function clickMeFunction() {
