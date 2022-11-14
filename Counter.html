@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .textClass {
+            font: 50px Arial, serif;
+        }
+        .buttonClass {
+            background-color: white;
+            color: #4CAF50;
+            border: 2px solid #4CAF50;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            transition-duration: 0.4s;
+            font-family: "OCR A Std, monospace"
+        }
+        .buttonClass:Hover {
+            background-color: #2EE59D;
+            box-shadow: 0px 15px 20px rgba(40, 230, 160, 0.5);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1 class="textClass">Counter</h1>
+    <h1 id="number" class="textClass">0</h1>
+    <button id="increase" class="buttonClass">Increase (+1)</button>
+    <button id="decrease" class="buttonClass">Decrease (-1)</button>
+    <button id="reset" class="buttonClass">Reset</button>
+
+    <script>
+        counter = 0;
+        window.onload = function () { // don't execute anything until page fully loads
+            const btn_increase = document.getElementById('increase');
+            const btn_decrease = document.getElementById('decrease');
+            const btn_reset = document.getElementById('reset');
+            const number = document.getElementById('number');
+            btn_increase.addEventListener('click', (event) => {
+                console.log("increase");
+                counter += 1;
+                number.innerHTML = counter;
+            });
+            btn_decrease.addEventListener('click', (event) => {
+                console.log("decrease");
+                counter -= 1;
+                number.innerHTML = counter;
+            });
+            btn_reset.addEventListener('click', (event) => {
+                console.log("reset");
+                counter = 0;
+                number.innerHTML = counter;
+            });
+
+            
+        }
+
+
+    </script>
+
+</body>
+</html>
